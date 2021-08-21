@@ -1,0 +1,117 @@
+Single Page Applications
+************************
+
+1) TSX
+      - Class Level Components
+
+2) JSX
+      - Functional Level Components
+
+      - Class Level Components
+
+3) Routing Parameters
+
+4) Protected Routes
+
+
+****************************************************
+
+>  react-router-dom    @types/react-router-dom
+
+> BrowserRouter
+
+> NavLink
+
+> Route
+
+****************************************************
+
+> npx create-react-app spa-app1 --template typescript
+
+> cd spa-app1
+
+> yarn add react-router-dom
+
+
+- we need to develop following components
+
+    1) App
+
+    2) Shirts
+
+    3) Jeans
+
+    4) Kids
+
+
+- where "App" component is the master component.
+
+- where "Shirt", "Jeans" and "Kids" components are child components.
+
+
+***************************************************
+spa-app2
+
+
+> npx create-react-app spa-app2 --template typescript
+
+> cd spa-app2
+
+> yarn add react-router-dom @types/react-router-dom
+
+
+> Login
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

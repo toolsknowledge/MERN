@@ -1,0 +1,511 @@
+Duration : 2 1/2 months - 3 months
+
+Fee : 6k
+
+
+1) Revision of ReactJS   (10 days)
+
+        => Components in ReactJS
+
+        => Props & State
+
+        => Single Page Applications
+
+                - Routing
+
+                - Protected Routes
+
+        => Ajax Calls
+
+        => State Management
+
+                - Redux
+
+                - Thunk
+
+                - Saga
+
+        => Life Cycle Hooks
+
+        => Debugging
+
+
+=> Revision of CSS3  (1 week)
+
+    => Flex Box
+
+    => Grid
+
+    => RWD  (Responsive Web Design)
+
+    => Psudo Examples
+
+
+=> MERN Stack Development
+
+    M - MongoDB   /  Cloud MongoDB / Atlas
+
+    E - ExpressJS
+
+    R - ReactJS
+
+    N - NodeJS
+
+
+=> Authentication & Authorization & Secuirity
+
+
+=> Cloud Deployment
+
+    - AWS Deployment
+
+        CI / CD Process
+
+
+
+***********************************************************************
+=> D3 Charts
+
+=> Dashboard Design
+
+=> Gmail Authentication / Facebook Authentication
+
+=> GitHub
+
+=> Interview Q for Experience 2 to 3 Q     (3+)      100 + Faq'S
+***********************************************************************
+
+
+
+ReactJS
+*******
+        - ReactJS is the "JavaScript" library.
+
+        - ReactJS Given By "Facebook".
+
+        - ReactJS, used to develop the "web Applications".
+
+        - we will develop ReactJS Applications in two ways.
+
+                        1) JSX
+
+                        2) TSX
+
+        - JSX Stands for JavaScript and XML.
+
+        - "JavaScript" won't follows the OOPS.
+
+        - "JavaScript" is the Object Based Scripting Language.
+
+        - TSX Stands for TypeScript and XML
+
+        - TypeScript is the Programming Language, Provided by Microsoft and follows the OOPS.
+
+Installation 
+************
+download and install "NodeJS"
+
+        - NodeJS containes following tools.
+
+        1) npm
+                - node packaging manager.
+
+                - npm helps to install the ReactJS.
+
+        2) npx
+
+                - node packaging runner.
+
+                - npx creates the environment to create the react Applications.
+
+        3) node
+
+                - node tool helps to execute the JavaScript.
+        4) nodemon
+
+                - nodemon tool, used to start the node server in watch mode
+
+        ---
+        ---
+        ---
+
+website : https://nodejs.org/en/
+
+file    : node-v16.6.1-x64.msi
+
+
+install yarn tool
+
+        - yarn tool, used to download the "3rd party" libraries.
+
+        - yarn tool, given by facebook.
+
+
+        > npm install -g yarn
+
+
+install create-react-app tool        
+
+        - create-react-app tool, provided by facebook.
+
+        - create-react-app tool, used to create the react Application.
+
+
+        > npm install -g create-react-app
+
+
+install Visual Studio Code
+
+        - VSCode provided by Microsoft.
+
+        - VSCode is the open source IDE.
+
+website : https://code.visualstudio.com/docs/?dv=win
+
+file    : VSCodeUserSetup-x64-1.59.0.exe
+
+
+create and execute the react project
+************************************
+1) create the react application
+
+        > npx create-react-app first-app --template typescript
+
+
+
+2) switch to react application
+
+        > cd first-app
+
+
+3) execute the react application
+
+        > yarn start
+
+
+        - The Default Port Number of React Application is 3000
+
+
+node_modules
+************
+        - it containes libraries.
+
+        - these libraries helps to execute the react application.
+
+
+public / index.html
+*******************
+        - react library starts the execution from "index.html" file.
+
+        - "index.html" file called as main template.
+
+        - "index.html" containes div as DOM Element with id as "root"
+
+src
+***
+        - it is used to deploy the components.
+
+src / App.tsx
+      App.css
+      App.test.tsx
+*******************
+
+        - App Component is the Default Component.
+
+
+src / index.tsx
+***************
+        - index.tsx file is registration file.
+
+        - it is used to register our components.
+
+
+src / index.css
+***************
+        - used to define the global css.
+
+        - this css applicable to entire application.
+
+
+                                ***** Mini Project Implementation ****
+
+
+Login
+*****
+
+1) MongoDB
+==========
+        - MongoDB is the "NoSQL" Database.
+
+        - MongoDB Supports "JSON".
+
+        - MongoDB Database also "light weight" Database.
+
+        - By Default MongoDB Running on 27017 port Number.
+
+        - MongoDB Supports the cloud environment in the form of a "MongoDB Atlas"
+
+        URL : https://account.mongodb.com/account/login
+
+
+**********************************************************************************
+                SQL                                     NoSQL
+**********************************************************************************
+Ex.
+        Oracle                                          MongoDB
+        MySQL                                           CassandraDB
+        SQLServer                                       RabbitMQ
+
+
+        databases                                       databases
+
+        tables                                          collections
+
+        records                                         documents
+
+        primary key                                     _id
+***************************************************************************************
+
+Database Name                   :               rjs-8pm-miniproject
+
+collection Name                 :               user_details
+
+Database user Name              :               admin
+
+Database Password               :               admin
+
+Connection URL                  :               mongodb+srv://admin:admin@miniprojectdb.nzphu.mongodb.net/rjs-8pm-miniproject?retryWrites=true&w=majority
+
+
+
+
+
+2) NodeJS
+
+        - NodeJS is the "backend" technology.
+
+        - NodeJS, used to develop the "servers".
+
+        - we can develop Rest API'S By Using NodeJS (ExpressJS).
+
+        - We will develop NodeJS Applications with the help of "JavaScript".
+
+        - NodeJS Supports modules / libraries.
+
+modules
+*******
+
+1) express
+        express module used to develop the rest api's
+
+        Ex.
+                GET
+                POST
+                PUT
+                DELETE
+                ---
+                ---
+                ---
+
+2) mongodb
+        mongodb module used to connect to mongodb database.
+
+
+3) body-parser
+        used to receive the data from client application
+
+
+4) cors
+        used to enable the communication between ports.
+
+
+Note : we will download above libraries with the help of yarn tool / npm tool
+
+
+=> create the folder
+
+
+        Ex.
+                server
+
+=> switch to server folder
+
+        > cd server
+
+
+=> download the modules
+
+        1) express
+
+        2) mongodb
+
+        3) cors
+
+        4) body-parser
+
+        5) jsonwebtoken
+
+        > yarn add express mongodb cors body-parser jsonwebtoken
+
+
+=> Implement the rest api
+
+        server.js
+
+=> start the server
+
+        > node server
+
+=> deploy code to aws
+
+        1) push code to github repository
+
+        2) create the application in aws
+
+        3) create the CI / CD Process
+
+******************************************************************
+Single Page Applications
+
+                - Routing
+
+                - Protected Routes
+
+
+                - JSX
+                     - Functional 
+                     - Class
+
+                - TSX
+                     - Class
+******************************************************************  
+
+11AM - 2PM                      &&              7PM - 9PM
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
