@@ -380,7 +380,6 @@ Single Page Applications
                      - Class
 ******************************************************************  
 
-11AM - 2PM                      &&              7PM - 9PM
 
 
 
@@ -416,6 +415,36 @@ Single Page Applications
 
 
 
+***********************************************
+frontend implementation
+***********************************************
+
+=> npx create-react-app miniproject-app --template typescript
+
+
+=> cd miniproject-app
+
+
+=> yarn add react-router-dom @types/react-router-dom axios @types/axios
+
+
+***************************************
+miniproject-app
+              src
+                App.tsx
+
+                Login.tsx
+                Dashboard.tsx
+                
+                Laptops.tsx
+                TVS.tsx
+                Mobiles.tsx
+                Cameras.tsx
+********************************************
+
+
+Login.tsx
+*********
 
 
 
