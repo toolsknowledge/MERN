@@ -443,13 +443,54 @@ miniproject-app
 ********************************************
 
 
-Login.tsx
+
+25-08-2021
+**********
+
+bucket name : rjsminiproject
+
+acs
+        => https://rjsminiproject.s3.ap-south-1.amazonaws.com/ac/ac1.jpeg
+
+                ""
+                ""
+                ""
+        => https://rjsminiproject.s3.ap-south-1.amazonaws.com/ac/ac10.jpeg
+
+cameras
+
+        => https://rjsminiproject.s3.ap-south-1.amazonaws.com/camera/camera1.jpeg
+                        ""
+                        ""
+                        ""
+                        ""
+        => https://rjsminiproject.s3.ap-south-1.amazonaws.com/camera/camera10.jpeg
+
+Washing Machine
+
+        => https://rjsminiproject.s3.ap-south-1.amazonaws.com/Washing+Machine/washingMachine1.jpeg
+                                ""
+                                ""
+                                ""
+                                ""
+        => https://rjsminiproject.s3.ap-south-1.amazonaws.com/Washing+Machine/washingMachine10.jpeg
+
+
+
+
+database details
+****************
+
+database name : rjs-8pm-miniproject
+
+collection names : Washing_Machine
+                   acs
+                   cameras
+
+
+
+server.js
 *********
-
-
-
-
-
 
 
 

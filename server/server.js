@@ -62,6 +62,40 @@ app.post("/login",(req,res)=>{
     });
 });
 
+
+//middleware
+const checkTokens = (req,res,next)=>{
+    let allHeaders = req.headers;
+    if(allHeaders.token === obj.token){
+        next();
+    }else{
+        res.send({"msg":"authentication failed"});
+    }
+};
+
+
+
+app.get("/category/:item",[checkTokens],(req,res)=>{
+        //item => Washing_Machine / acs / cameras
+        
+        miniproject.connect(process.env.CONNECTION_URL,(err,connection)=>{
+            if(err) throw err;
+            else{
+                const db = connection.db(process.env.DATABASE_NAME);
+                db.collection(req.params.item).find().toArray((err,array)=>{
+                    if(err) throw err;
+                    else{
+                        res.send(array);
+                    }
+                })
+            }
+        });
+
+});
+
+
+
+
 let port = process.env.PORT || 1234;
 
 app.listen(port,()=>{
