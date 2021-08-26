@@ -489,8 +489,57 @@ collection names : Washing_Machine
 
 
 
-server.js
-*********
+Rest API Calls
+**************
+
+=> http://localhost:8080/login     (POST)
+
+                body
+                ****
+                email
+                password
+
+
+=> http://localhost:8080/category/acs     (GET)
+        header
+        ******
+        token : read the token from local storage
+
+
+=> http://localhost:8080/category/cameras       (GET)
+        header
+        ******
+        token : read the token from local storage
+
+=> http://localhost:8080/category/Washing_Machine    (GET)
+        header
+        ******
+        token : read the token from local storage
+
+
+
+1) Product.tsx
+
+        => read the routing parameter
+
+                Ex.
+                        acs
+                        cameras
+                        Washing_Machine
+
+        => make the rest api call
+
+                add the header
+
+                token : read the token from local storage
+
+
+
+
+
+
+
+
 
 
 

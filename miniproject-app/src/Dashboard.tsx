@@ -1,10 +1,7 @@
 import React, { Component } from "react";
 import { BrowserRouter, NavLink, Route } from "react-router-dom";
-import Cameras from "./Cameras";
-import Laptops from "./Laptops";
-import Mobiles from "./Mobiles";
-import TVS from "./TVS";
 import { History, LocationState } from "history";
+import Product from "./Product";
 
 interface IState{}
 interface IProps{
@@ -26,37 +23,32 @@ class Dashboard extends Component<IProps,IState>{
                 <BrowserRouter>
                     <NavLink to="/">Move To Back</NavLink>
                     <br></br><br></br>
-                    <NavLink to="/laptops" 
-                             exact={true} 
-                             strict 
-                             activeStyle={{color:"red"}}
-                             style={{marginRight:150}}>Laptops</NavLink>
-                    <NavLink to="/tvs" 
-                             exact={true} 
-                             strict 
-                             activeStyle={{color:"red"}}
-                             style={{marginRight:150}}>TVS</NavLink>
-
-                    <NavLink to="/mobiles" 
-                             exact={true} 
-                             strict 
-                             activeStyle={{color:"red"}}
-                             style={{marginRight:150}}>Mobiles</NavLink>
-
                     <NavLink to="/cameras" 
                              exact={true} 
                              strict 
                              activeStyle={{color:"red"}}
-                             style={{marginRight:150}}>Cameras</NavLink>
+                             style={{marginRight:150}}>CAMERAS</NavLink>
+                    <NavLink to="/acs" 
+                             exact={true} 
+                             strict 
+                             activeStyle={{color:"red"}}
+                             style={{marginRight:150}}>ACS</NavLink>
 
+                    <NavLink to="/washingmachines" 
+                             exact={true} 
+                             strict 
+                             activeStyle={{color:"red"}}
+                             style={{marginRight:150}}>Washing Machines</NavLink>
+
+                    
                     <button onClick={this.logout}>Logout</button>
 
                     <br></br>
 
-                    <Route path="/laptops" component={Laptops} exact={true} strict></Route>
-                    <Route path="/tvs" component={TVS} exact={true} strict></Route>
-                    <Route path="/mobiles" component={Mobiles} exact={true} strict></Route>
-                    <Route path="/cameras" component={Cameras} exact={true} strict></Route>
+                    <Route path="/cameras" component={Product} exact={true} strict></Route>
+                    <Route path="/acs" component={Product} exact={true} strict></Route>
+                    <Route path="/washingmachines" component={Product} exact={true} strict></Route>
+                    
                 </BrowserRouter>
             </React.Fragment>
         )
