@@ -21,8 +21,7 @@ class Product extends Component<IProps,IState>{
     }
     componentDidMount(){
 
-        console.log( this.props.match.params.item );
-        axios.get(`http://localhost:8080/category/acs`,{headers:{"token":window.localStorage.getItem("miniproject")}}).then((posRes)=>{
+        axios.get(`http://localhost:8080/category/${this.props.match.params.item}`,{headers:{"token":window.localStorage.getItem("miniproject")}}).then((posRes)=>{
             const { data } = posRes;
             this.setState({
                 result : data

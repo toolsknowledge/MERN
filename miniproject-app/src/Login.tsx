@@ -30,14 +30,37 @@ class Login extends Component<IProps,IState>{
     render(){
         return(
             <React.Fragment>
-                <fieldset>
+                {/* <fieldset>
                     <legend>Login</legend>
                     <input type="email" placeholder="Enter Email" ref={this.email}></input>
                     <br></br><br></br>
                     <input type="password" placeholder="Enter Password" ref={this.password}></input>
                     <br></br><br></br>
                     <button onClick={this.login}>Login</button>
-                </fieldset>
+                </fieldset> */}
+
+                <div className="form">
+                    <div>
+                        <h1>Login Form</h1>
+                    </div>
+
+                    <div>
+                        <label>Email</label>
+                        <input type="email" placeholder="Enter Email" ref={this.email}></input>
+                    </div>
+
+                    <div>
+                        <label>Password</label>
+                        <input type="password" placeholder="Enter Password" ref={this.password}></input>
+                    </div>
+
+                    <div>
+                        <label></label>
+                        <button onClick={this.login} className="primary">Login</button>
+                    </div>
+                </div>
+
+
             </React.Fragment>
         )
     }
