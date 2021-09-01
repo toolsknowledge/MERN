@@ -68,7 +68,7 @@ a:hover{
 
 main{
   grid-area: 'main';
-  padding: 10px;
+  
 }
 
 footer{
@@ -121,18 +121,46 @@ button:hover {
 }
 
 .category{
-  color: red;
-  background-color: yellow;
-  padding: 10px;
-  border-radius: 10px;
-  border: 1px solid red;
+   background-color: #cc5713;
+   display: flex;
+   flex-wrap: wrap;
+   justify-content: space-around;
+   align-items: center;
 }
 
-.category:hover{
+/* .category:hover{
   border: 0.1px solid gray;
+} */
+
+
+
+.card{
+  border: 0.1rem #0e0d0d solid;
+  background-color: #f8f8f8;
+  border-radius: 0.5rem;
+  margin: 1rem;
+}
+
+.card-body {
+  padding: 1rem;
+}
+.card-body > * {
+  margin-bottom: 0.5rem;
+}
+.price {
+  font-size: 2rem;
 }
 
 
+.row {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-around;
+  align-items: center;
+}
 
+.row.top {
+  align-items: flex-start;
+}
 
 

@@ -34,7 +34,20 @@ class Product extends Component<IProps,IState>{
     render(){
         return(
             <React.Fragment>
-                {JSON.stringify(this.state.result)}
+                <div className="row top">
+                    {this.state.result.map((element:any,index:number)=>(
+                        <div className="card">
+                            <img src={element.image}></img>
+                            <div className="card-body">
+                                <h2>{element.name}</h2>
+                                <p>{element.rating}</p>
+                                <div className="price">
+                                    {element.price}
+                                </div>
+                            </div>
+                        </div>
+                    ))}
+                </div>
             </React.Fragment>
         )
     }
