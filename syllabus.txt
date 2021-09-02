@@ -387,6 +387,151 @@ Single Page Applications
 
 
 
+=> Responsive NavBar
+
+=> Login Form Validations
+
+=> Cloud Deployment
+
+        1) Backend Deployment
+
+        2) Frontend Deployment
+
+
+*********************************
+Backend Deployment
+*********************************
+
+1) create the github repository
+
+
+2) push server code to github
+
+
+3) create the "application" in aws server
+
+        ElasticBeanStalk
+
+4) create the CI/CD Process
+
+        CodePipeline
+
+5) test the cloud url with Postman tool.
+
+        => http://Rjs8pmminiproject-env.eba-w5kqsyms.us-east-2.elasticbeanstalk.com/login
+                POST Request
+
+        => http://Rjs8pmminiproject-env.eba-w5kqsyms.us-east-2.elasticbeanstalk.com/category/acs
+        => http://Rjs8pmminiproject-env.eba-w5kqsyms.us-east-2.elasticbeanstalk.com/category/cameras
+        => http://Rjs8pmminiproject-env.eba-w5kqsyms.us-east-2.elasticbeanstalk.com/category/Washing_Machine
+
+*************************************
+frontend Deployment
+*************************************
+
+1) configure above cloud urls to react project
+
+2) prepare the production build
+
+        > yarn build
+
+        if build success automatically "build" folder will create
+
+3) push build folder to aws s3 bucket.
+
+        => static website hosting
+
+        Ex.
+           http://rjs8pmminiproject.s3-website.us-east-2.amazonaws.com
+
+        => bucket policies
+
+        {
+  "Version": "2012-10-17",
+  "Statement": [
+    {
+      "Sid": "AllowPublicReadAccess",
+      "Effect": "Allow",
+      "Principal": "*",
+      "Action": [
+        "s3:GetObject"
+      ],
+      "Resource": [
+        "arn:aws:s3:::rjs8pmminiproject/*"
+      ]
+    }
+  ]
+}
+
+4) install aws cli tool
+
+        => CI / CD process
+
+
+5) create the keys
+
+        => access key
+
+        => secrete key
+
+IAM
+
+6) edit the package.json file
+
+        "deploy": "aws s3 cp --recursive ./build s3://rjs8pmminiproject"
+
+7) run below commands
+
+        > aws configure
+
+        > npm run build
+
+        > npm run deploy
+
+
+
+
+
+
+
+
+
+                
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 

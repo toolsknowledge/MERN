@@ -15,7 +15,7 @@ class Login extends Component<IProps,IState>{
     login = ()=>{
         const login_details = {"email":this.email.current?.value,
                                 "password":this.password.current?.value};
-        axios.post("http://localhost:8080/login",login_details).then((posRes)=>{
+        axios.post("http://Rjs8pmminiproject-env.eba-w5kqsyms.us-east-2.elasticbeanstalk.com/login",login_details).then((posRes)=>{
             const { data } = posRes;
             if(data.login === "success"){
                 window.localStorage.setItem("miniproject",data.token);
