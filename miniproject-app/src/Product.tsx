@@ -1,3 +1,4 @@
+//http://Rjs8pmminiproject-env.eba-w5kqsyms.us-east-2.elasticbeanstalk.com/category/
 import React, {  Component } from "react";
 import axios from "axios";
 import { match as Match } from "react-router-dom";
@@ -21,7 +22,7 @@ class Product extends Component<IProps,IState>{
     }
     componentDidMount(){
 
-        axios.get(`http://Rjs8pmminiproject-env.eba-w5kqsyms.us-east-2.elasticbeanstalk.com/category/${this.props.match.params.item}`,{headers:{"token":window.localStorage.getItem("miniproject")}}).then((posRes)=>{
+        axios.get(`http://localhost:8080/category/${this.props.match.params.item}`,{headers:{"token":window.localStorage.getItem("miniproject")}}).then((posRes)=>{
             const { data } = posRes;
             this.setState({
                 result : data

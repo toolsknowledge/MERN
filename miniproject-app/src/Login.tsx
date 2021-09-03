@@ -1,8 +1,14 @@
+//http://Rjs8pmminiproject-env.eba-w5kqsyms.us-east-2.elasticbeanstalk.com/login
+
 import React, { Component } from "react";
 import axios from "axios";
 import { History,LocationState } from "history";
 
-interface IState{}
+interface IState{
+    "email":string;
+    "password":string;
+    "emailError":string;
+}
 interface IProps{
     history:History<LocationState>;
 }
@@ -11,11 +17,20 @@ class Login extends Component<IProps,IState>{
     password = React.createRef<HTMLInputElement>();
     constructor(props:IProps){
         super(props);
+        this.state = {
+            "email" : "",
+            "password" : "",
+            "emailError" : ""
+        }
     }
+
+    
+
+
     login = ()=>{
         const login_details = {"email":this.email.current?.value,
                                 "password":this.password.current?.value};
-        axios.post("http://Rjs8pmminiproject-env.eba-w5kqsyms.us-east-2.elasticbeanstalk.com/login",login_details).then((posRes)=>{
+        axios.post("http://localhost:8080/login",login_details).then((posRes)=>{
             const { data } = posRes;
             if(data.login === "success"){
                 window.localStorage.setItem("miniproject",data.token);
@@ -27,18 +42,53 @@ class Login extends Component<IProps,IState>{
             console.log(errRes);
         });
     }
+
+    handleChange = (event:any)=>{
+        const {name,value} = event.target;
+        // @ts-ignore
+        this.setState({
+            [name] : value
+        })
+        return;
+    };
+
+    handleBlur = (event:any)=>{
+        const {name} = event.target;
+        this.validateField(name);
+    }
+
+    validateField(name:string){
+        let isValid:boolean = false;
+        if(name === "email") isValid = this.validateEmail();
+        else if(name==="password") isValid = this.validatePassword();
+        return isValid;
+    }
+
+    validateEmail():boolean{
+        let emailError:any = "";
+        let actulaValue:any = this.state.email;
+        if(actulaValue.trim === "") emailError = "Email Address is Required";
+        
+        else if(!/^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/.test(actulaValue)) emailError = "Pease Enter Valid Email"; 
+        
+        this.setState({
+            "emailError" : emailError
+        })
+
+        return emailError==="";
+    }
+
+    validatePassword():boolean{
+        return true;
+    }
+
+
+
+
     render(){
         return(
             <React.Fragment>
-                {/* <fieldset>
-                    <legend>Login</legend>
-                    <input type="email" placeholder="Enter Email" ref={this.email}></input>
-                    <br></br><br></br>
-                    <input type="password" placeholder="Enter Password" ref={this.password}></input>
-                    <br></br><br></br>
-                    <button onClick={this.login}>Login</button>
-                </fieldset> */}
-
+               
                 <div className="form">
                     <div>
                         <h1>Login Form</h1>
@@ -46,12 +96,25 @@ class Login extends Component<IProps,IState>{
 
                     <div>
                         <label>Email</label>
-                        <input type="email" placeholder="Enter Email" ref={this.email}></input>
+                        <input type="email" 
+                               ref={this.email}
+                               value={this.state.email}
+                               placeholder="Enter Email"
+                               name="email"
+                               onChange={this.handleChange}
+                               onBlur={this.handleBlur}></input>
+                        <h5>{this.state.emailError}</h5>
                     </div>
 
                     <div>
                         <label>Password</label>
-                        <input type="password" placeholder="Enter Password" ref={this.password}></input>
+                        <input type="password"  
+                               ref={this.password}
+                               value={this.state.password}
+                               placeholder="Enter Password"
+                               name="password"
+                               onChange={this.handleChange}
+                               onBlur={this.handleBlur}></input>
                     </div>
 
                     <div>

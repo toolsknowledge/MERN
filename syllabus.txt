@@ -391,11 +391,6 @@ Single Page Applications
 
 => Login Form Validations
 
-=> Cloud Deployment
-
-        1) Backend Deployment
-
-        2) Frontend Deployment
 
 
 *********************************
