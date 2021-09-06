@@ -8,6 +8,7 @@ interface IState{
     "email":string;
     "password":string;
     "emailError":string;
+    "passwordError":string;
 }
 interface IProps{
     history:History<LocationState>;
@@ -20,12 +21,10 @@ class Login extends Component<IProps,IState>{
         this.state = {
             "email" : "",
             "password" : "",
-            "emailError" : ""
+            "emailError" : "",
+            "passwordError": ""
         }
     }
-
-    
-
 
     login = ()=>{
         const login_details = {"email":this.email.current?.value,
@@ -62,6 +61,10 @@ class Login extends Component<IProps,IState>{
         if(name === "email") isValid = this.validateEmail();
         else if(name==="password") isValid = this.validatePassword();
         return isValid;
+
+
+
+
     }
 
     validateEmail():boolean{
@@ -79,7 +82,17 @@ class Login extends Component<IProps,IState>{
     }
 
     validatePassword():boolean{
-        return true;
+        let passwordError:string = "";
+        let actulaValue:any = this.state.password;
+        if(actulaValue.trim === "") passwordError = "Password is Required";
+        else if(!/^(?=.*\d)(?=.*[a-z])(?=.*[A-Z])[0-9a-zA-Z]{8,}$/.test(actulaValue)) passwordError = "please enter valid password"
+        
+        
+        this.setState({
+            "passwordError" : passwordError
+        })
+
+        return passwordError==="";
     }
 
 
@@ -115,6 +128,7 @@ class Login extends Component<IProps,IState>{
                                name="password"
                                onChange={this.handleChange}
                                onBlur={this.handleBlur}></input>
+                        <h5>{this.state.passwordError}</h5>       
                     </div>
 
                     <div>

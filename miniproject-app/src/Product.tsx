@@ -2,6 +2,8 @@
 import React, {  Component } from "react";
 import axios from "axios";
 import { match as Match } from "react-router-dom";
+import Rating from "./Rating";
+import LoadingBox from "./LoadingBox";
 interface IState{
     result : any;
 }
@@ -35,21 +37,24 @@ class Product extends Component<IProps,IState>{
     render(){
         return(
             <React.Fragment>
-                <div className="row top">
+                {this.state.result.length<=0?
+                (<LoadingBox></LoadingBox>):
+                (<div className="row top">
                     {this.state.result.map((element:any,index:number)=>(
                         <div className="card">
                             <img src={element.image}></img>
                             <div className="card-body">
                                 <h2>{element.name}</h2>
-                                <p>{element.rating}</p>
+                                <Rating rating={element.rating}></Rating>
                                 <div className="price">
                                     {element.price}
                                 </div>
                             </div>
                         </div>
                     ))}
-                </div>
-            </React.Fragment>
+                </div>)
+        }
+    </React.Fragment>
         )
     }
 }

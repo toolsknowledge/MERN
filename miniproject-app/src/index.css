@@ -151,6 +151,11 @@ button:hover {
   font-size: 2rem;
 }
 
+.rating span {
+  color: #f0c040;
+  margin: 0.1rem;
+}
+
 
 .row {
   display: flex;
@@ -163,4 +168,7 @@ button:hover {
   align-items: flex-start;
 }
 
+.loading {
+  display: block !important;
+}
 
